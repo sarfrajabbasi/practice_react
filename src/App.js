@@ -1,13 +1,14 @@
 // import { ErrorBoundary } from "react-error-boundary";
 import "./App.css";
-import FromObj from "./component/useState/FromObj";
-import LisrArr from "./component/useState/LisrArr";
+// import FromObj from "./component/useState/FromObj";
+// import LisrArr from "./component/useState/LisrArr";
+import LisrArr from "./component/useEffect/";
 // import PostForm from "./component/axios/PostForm";
 // import PostList from "./component/axios/PostList";
 // import Counter from "./component/useState/Counter";
 // import ClickCounter from "./component/render-props/ClickCounter";
 // import HoverCounter from "./component/render-props/HoverCounter";
-// import Counter from "./component/render-props/Counter.js";
+// import Counter  from "./component/render-props/Counter.js";
 // import PortalComp from "./component/portals/PortalComp";
 // import ErrorFallback from "./component/errorBoundary/ErrorFallback";
 // import MyComp from "./component/errorBoundary/MyComp";
@@ -56,8 +57,8 @@ function App() {
       {/* <PostList></PostList> */}
       {/* <PostForm></PostForm> */}
       {/* <Counter></Counter> */}
-      <FromObj></FromObj>
-      <LisrArr></LisrArr>
+      {/* <FromObj></FromObj> */}
+      {/* <LisrArr></LisrArr> */}
     </div>
   );
 }
