@@ -1,5 +1,7 @@
 // import { ErrorBoundary } from "react-error-boundary";
 import "./App.css";
+import FromObj from "./component/useState/FromObj";
+import LisrArr from "./component/useState/LisrArr";
 // import PostForm from "./component/axios/PostForm";
 // import PostList from "./component/axios/PostList";
 // import Counter from "./component/useState/Counter";
@@ -54,6 +56,8 @@ function App() {
       {/* <PostList></PostList> */}
       {/* <PostForm></PostForm> */}
       {/* <Counter></Counter> */}
+      <FromObj></FromObj>
+      <LisrArr></LisrArr>
     </div>
   );
 }
