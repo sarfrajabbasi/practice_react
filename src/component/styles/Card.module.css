@@ -1,0 +1,17 @@
+/* Card.module.css */
+.card {
+    border: 1px solid #ccc;
+    padding: 20px;
+    border-radius: 5px;
+  }
+  
+  .title {
+    color: #333;
+    font-size: 20px;
+  }
+  
+  .description {
+    color: #666;
+    font-size: 16px;
+  }
+  
