@@ -1,8 +1,12 @@
 // import { ErrorBoundary } from "react-error-boundary";
 import "./App.css";
+import IncorrectDepnd from "./component/useEffect/IncorrectDepnd";
+// import FetchData from "./component/useEffect/FetchData";
+// import MouseContainer from "./component/useEffect/MouseContainer";
 // import FromObj from "./component/useState/FromObj";
 // import LisrArr from "./component/useState/LisrArr";
-import LisrArr from "./component/useEffect/";
+// import LisrArr from "./component/useEffect/";
+// import CounterEffect from "./component/useEffect/CounterEffect";
 // import PostForm from "./component/axios/PostForm";
 // import PostList from "./component/axios/PostList";
 // import Counter from "./component/useState/Counter";
@@ -59,6 +63,12 @@ function App() {
       {/* <Counter></Counter> */}
       {/* <FromObj></FromObj> */}
       {/* <LisrArr></LisrArr> */}
+
+      {/* <CounterEffect> */}
+      {/* <FetchData></FetchData> */}
+      {/* <HookMouse></HookMouse> */}
+      {/* <MouseContainer></MouseContainer> */}
+      <IncorrectDepnd></IncorrectDepnd>
     </div>
   );
 }
