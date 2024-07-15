@@ -6,13 +6,15 @@ const IncorrectDepnd = () => {
     useEffect(()=>{
         const ticks = ()=>{
             // correct approach
-            console.log(`count:${count}`);
-            setCount(prevCount => prevCount+1)
+            setCount(prevCount => {
+                // console.log(`Count:${prevCount}`);
+                return prevCount +1
+            })
             // setCount(count+1)
         }
         console.log('add timer');
         const interval = setInterval(ticks,1000);
-
+        
         return ()=>{
             clearInterval(interval)
             console.log('remove timer');
@@ -26,3 +28,4 @@ const IncorrectDepnd = () => {
 }
 
 export default IncorrectDepnd
+

@@ -1,5 +1,6 @@
 // import { ErrorBoundary } from "react-error-boundary";
 import "./App.css";
+import DataFetching from "./component/useEffect/DataFetching";
 import IncorrectDepnd from "./component/useEffect/IncorrectDepnd";
 // import FetchData from "./component/useEffect/FetchData";
 // import MouseContainer from "./component/useEffect/MouseContainer";
@@ -68,7 +69,8 @@ function App() {
       {/* <FetchData></FetchData> */}
       {/* <HookMouse></HookMouse> */}
       {/* <MouseContainer></MouseContainer> */}
-      <IncorrectDepnd></IncorrectDepnd>
+      {/* <IncorrectDepnd></IncorrectDepnd> */}
+      <DataFetching></DataFetching>
     </div>
   );
 }
