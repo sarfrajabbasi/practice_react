@@ -1,8 +1,13 @@
 // import { ErrorBoundary } from "react-error-boundary";
 import "./App.css";
-import DataFetchFromBtnClick from "./component/useEffect/DataFetchFromBtnClick";
-import DataFetching from "./component/useEffect/DataFetching";
-import IncorrectDepnd from "./component/useEffect/IncorrectDepnd";
+import { UserProvider } from "./component/context/UserContext";
+// import DataFetchFromBtnClick from "./component/useEffect/DataFetchFromBtnClick";
+// import DataFetching from "./component/useEffect/DataFetching";
+// import IncorrectDepnd from "./component/useEffect/IncorrectDepnd";
+import CompC from "./component/context/CompC";
+
+import { useEffect, useState } from "react";
+import { ThemeProvider } from "./component/context/ThemeContext";
 // import FetchData from "./component/useEffect/FetchData";
 // import MouseContainer from "./component/useEffect/MouseContainer";
 // import FromObj from "./component/useState/FromObj";
@@ -31,6 +36,31 @@ import IncorrectDepnd from "./component/useEffect/IncorrectDepnd";
 // import Header from './component/styles/Header';
 
 function App() {
+  const [username, setUsername] = useState("sarfraj");
+  const [theme, setTheme] = useState({ background: "", color: "" });
+  const randomNum = () =>
+    `#${Math.floor(Math.random() * 16777215)
+      .toString(16)
+      .toUpperCase()}`;
+  console.log(randomNum());
+  const isLighterColor = (color) => {
+    // convrt hex to RGB
+    const r = parseInt(color.slice(1, 3), 16);
+    const g = parseInt(color.slice(1, 3), 16);
+    const b = parseInt(color.slice(1, 3), 16);
+    // calculate brigntess (0.299*R + 0.587*G + 0.114*B)
+    const brightness = (0.99 * r + 0.587 * g + 0.114 * b);
+    // Return true if color is light,ohterwise false
+    return brightness > 186
+  };
+  const generateTheme= ()=>{
+    const bgColor = randomNum();
+    const textColor = isLighterColor(bgColor) ? '#000000' : "#ffffff";
+    setTheme({background:bgColor,color:textColor})
+  }
+  useEffect(()=>{
+    generateTheme()
+  },[])
   return (
     <div className="App">
       {/* <PropsParent></PropsParent>
@@ -52,7 +82,7 @@ function App() {
       {/* <HoverCounter></HoverCounter> */}
       {/* take as a parameter */}
 
-{/*  <Counter render={(count,incrementCount)=>(<ClickCounter count={count} incrementCount={incrementCount}></ClickCounter>
+      {/*  <Counter render={(count,incrementCount)=>(<ClickCounter count={count} incrementCount={incrementCount}></ClickCounter>
       )}></Counter> */}
 
       {/* <Counter render={(count,incrementCount)=>(<HoverCounter count={count} incrementCount={incrementCount}>
@@ -73,8 +103,18 @@ function App() {
       {/* <IncorrectDepnd></IncorrectDepnd> */}
       {/* <DataFetching></DataFetching> */}
       {/* <DataFetchFromBtnClick></DataFetchFromBtnClick> */}
+      <ThemeProvider value={theme}>
+        <UserProvider value={username}>
+          <CompC></CompC>
+          <button
+            onClick={generateTheme}
+          >
+            changes theme
+          </button>
+        </UserProvider>
+      </ThemeProvider>
     </div>
   );
-}b
+}
 
 export default App;
