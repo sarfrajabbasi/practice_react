@@ -6,8 +6,14 @@ import { UserProvider } from "./component/context/UserContext";
 // import IncorrectDepnd from "./component/useEffect/IncorrectDepnd";
 import CompC from "./component/context/CompC";
 
-import { useEffect, useState } from "react";
+import { useEffect, useReducer, useState } from "react";
 import { ThemeProvider } from "./component/context/ThemeContext";
+import CounterReducer from "./component/useReducer/CounterReducer";
+import CounterThree from "./component/useReducer/CounterThree";
+import { Provider } from "./component/useReducer/CounterContext";
+import CounterA from "./component/useReducer/CounterA";
+import CounterB from "./component/useReducer/CounterB";
+import CounterC from "./component/useReducer/CounterC";
 // import FetchData from "./component/useEffect/FetchData";
 // import MouseContainer from "./component/useEffect/MouseContainer";
 // import FromObj from "./component/useState/FromObj";
@@ -35,6 +41,26 @@ import { ThemeProvider } from "./component/context/ThemeContext";
 // import PropsParent from './component/props/PropsParent';
 // import Header from './component/styles/Header';
 
+
+
+
+// Initial state aur reducer function define karo
+
+const initialState = { count: 0 };
+
+const reducer = (state, action) => {
+    switch (action.type) {
+        case 'increment':
+            return { count: state.count + 1 };
+        case 'decrement':
+            return { count: state.count - 1 };
+        case 'reset':
+            return initialState;
+        default:
+            return state;
+    }
+};
+
 function App() {
   const [username, setUsername] = useState("sarfraj");
   const [theme, setTheme] = useState({ background: "", color: "" });
@@ -61,6 +87,8 @@ function App() {
   useEffect(()=>{
     generateTheme()
   },[])
+
+  const [count,dispatch] = useReducer(reducer,initialState)
   return (
     <div className="App">
       {/* <PropsParent></PropsParent>
@@ -113,8 +141,18 @@ function App() {
           </button>
         </UserProvider>
       </ThemeProvider>
+      <CounterReducer></CounterReducer>
+      <CounterThree></CounterThree>
+      
+      <Provider value={{countState:count,countDispatch:dispatch}}>
+      <h1 >Count : {count.count}</h1>
+      <CounterA></CounterA>
+      <CounterB></CounterB>
+      <CounterC></CounterC>
+      </Provider>
     </div>
   );
 }
 
 export default App;
+
