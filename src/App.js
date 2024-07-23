@@ -1,6 +1,7 @@
 // import { ErrorBoundary } from "react-error-boundary";
 import "./App.css";
-import FetchWithReducer from "./component/useReducer/FetchWithReducer";
+import ParentComp from "./component/useCallback/ParentComp";
+// import FetchWithReducer from "./component/useReducer/FetchWithReducer";
 // import { UserProvider } from "./component/context/UserContext";
 // import DataFetchFromBtnClick from "./component/useEffect/DataFetchFromBtnClick";
 // import DataFetching from "./component/useEffect/DataFetching";
@@ -151,7 +152,9 @@ function App() {
       <CounterB></CounterB>
       <CounterC></CounterC>
       </Provider> */}
-      <FetchWithReducer></FetchWithReducer>
+      {/* <FetchWithReducer></FetchWithReducer> */}
+      <ParentComp></ParentComp>
+
     </div>
   );
 }
