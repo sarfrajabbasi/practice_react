@@ -1,19 +1,20 @@
 // import { ErrorBoundary } from "react-error-boundary";
 import "./App.css";
-import { UserProvider } from "./component/context/UserContext";
+import FetchWithReducer from "./component/useReducer/FetchWithReducer";
+// import { UserProvider } from "./component/context/UserContext";
 // import DataFetchFromBtnClick from "./component/useEffect/DataFetchFromBtnClick";
 // import DataFetching from "./component/useEffect/DataFetching";
 // import IncorrectDepnd from "./component/useEffect/IncorrectDepnd";
-import CompC from "./component/context/CompC";
+// import CompC from "./component/context/CompC";
 
-import { useEffect, useReducer, useState } from "react";
-import { ThemeProvider } from "./component/context/ThemeContext";
-import CounterReducer from "./component/useReducer/CounterReducer";
-import CounterThree from "./component/useReducer/CounterThree";
-import { Provider } from "./component/useReducer/CounterContext";
-import CounterA from "./component/useReducer/CounterA";
-import CounterB from "./component/useReducer/CounterB";
-import CounterC from "./component/useReducer/CounterC";
+// import { useEffect, useReducer, useState } from "react";
+// import { ThemeProvider } from "./component/context/ThemeContext";
+// import CounterReducer from "./component/useReducer/CounterReducer";
+// import CounterThree from "./component/useReducer/CounterThree";
+// import { Provider } from "./component/useReducer/CounterContext";
+// import CounterA from "./component/useReducer/CounterA";
+// import CounterB from "./component/useReducer/CounterB";
+// import CounterC from "./component/useReducer/CounterC";
 // import FetchData from "./component/useEffect/FetchData";
 // import MouseContainer from "./component/useEffect/MouseContainer";
 // import FromObj from "./component/useState/FromObj";
@@ -46,49 +47,49 @@ import CounterC from "./component/useReducer/CounterC";
 
 // Initial state aur reducer function define karo
 
-const initialState = { count: 0 };
+// const initialState = { count: 0 };
 
-const reducer = (state, action) => {
-    switch (action.type) {
-        case 'increment':
-            return { count: state.count + 1 };
-        case 'decrement':
-            return { count: state.count - 1 };
-        case 'reset':
-            return initialState;
-        default:
-            return state;
-    }
-};
+// const reducer = (state, action) => {
+//     switch (action.type) {
+//         case 'increment':
+//             return { count: state.count + 1 };
+//         case 'decrement':
+//             return { count: state.count - 1 };
+//         case 'reset':
+//             return initialState;
+//         default:
+//             return state;
+//     }
+// };
 
 function App() {
-  const [username, setUsername] = useState("sarfraj");
-  const [theme, setTheme] = useState({ background: "", color: "" });
-  const randomNum = () =>
-    `#${Math.floor(Math.random() * 16777215)
-      .toString(16)
-      .toUpperCase()}`;
-  console.log(randomNum());
-  const isLighterColor = (color) => {
-    // convrt hex to RGB
-    const r = parseInt(color.slice(1, 3), 16);
-    const g = parseInt(color.slice(1, 3), 16);
-    const b = parseInt(color.slice(1, 3), 16);
-    // calculate brigntess (0.299*R + 0.587*G + 0.114*B)
-    const brightness = (0.99 * r + 0.587 * g + 0.114 * b);
-    // Return true if color is light,ohterwise false
-    return brightness > 186
-  };
-  const generateTheme= ()=>{
-    const bgColor = randomNum();
-    const textColor = isLighterColor(bgColor) ? '#000000' : "#ffffff";
-    setTheme({background:bgColor,color:textColor})
-  }
-  useEffect(()=>{
-    generateTheme()
-  },[])
+//   const [username, setUsername] = useState("sarfraj");
+//   const [theme, setTheme] = useState({ background: "", color: "" });
+//   const randomNum = () =>
+//     `#${Math.floor(Math.random() * 16777215)
+//       .toString(16)
+//       .toUpperCase()}`;
+//   console.log(randomNum());
+//   const isLighterColor = (color) => {
+//     // convrt hex to RGB
+//     const r = parseInt(color.slice(1, 3), 16);
+//     const g = parseInt(color.slice(1, 3), 16);
+//     const b = parseInt(color.slice(1, 3), 16);
+//     // calculate brigntess (0.299*R + 0.587*G + 0.114*B)
+//     const brightness = (0.99 * r + 0.587 * g + 0.114 * b);
+//     // Return true if color is light,ohterwise false
+//     return brightness > 186
+//   };
+//   const generateTheme= ()=>{
+//     const bgColor = randomNum();
+//     const textColor = isLighterColor(bgColor) ? '#000000' : "#ffffff";
+//     setTheme({background:bgColor,color:textColor})
+//   }
+//   useEffect(()=>{
+//     generateTheme()
+//   },[])
 
-  const [count,dispatch] = useReducer(reducer,initialState)
+//   const [count,dispatch] = useReducer(reducer,initialState)
   return (
     <div className="App">
       {/* <PropsParent></PropsParent>
@@ -131,7 +132,7 @@ function App() {
       {/* <IncorrectDepnd></IncorrectDepnd> */}
       {/* <DataFetching></DataFetching> */}
       {/* <DataFetchFromBtnClick></DataFetchFromBtnClick> */}
-      <ThemeProvider value={theme}>
+      {/* <ThemeProvider value={theme}>
         <UserProvider value={username}>
           <CompC></CompC>
           <button
@@ -149,7 +150,8 @@ function App() {
       <CounterA></CounterA>
       <CounterB></CounterB>
       <CounterC></CounterC>
-      </Provider>
+      </Provider> */}
+      <FetchWithReducer></FetchWithReducer>
     </div>
   );
 }
