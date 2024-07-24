@@ -1,6 +1,7 @@
 // import { ErrorBoundary } from "react-error-boundary";
 import "./App.css";
-import ParentComp from "./component/useCallback/ParentComp";
+import MemoCounter from "./component/useMemo/MemoCounter";
+// import ParentComp from "./component/useCallback/ParentComp";
 // import FetchWithReducer from "./component/useReducer/FetchWithReducer";
 // import { UserProvider } from "./component/context/UserContext";
 // import DataFetchFromBtnClick from "./component/useEffect/DataFetchFromBtnClick";
@@ -153,8 +154,8 @@ function App() {
       <CounterC></CounterC>
       </Provider> */}
       {/* <FetchWithReducer></FetchWithReducer> */}
-      <ParentComp></ParentComp>
-
+      {/* <ParentComp></ParentComp> */}
+      <MemoCounter></MemoCounter>
     </div>
   );
 }
