@@ -1,6 +1,9 @@
 // import { ErrorBoundary } from "react-error-boundary";
 import "./App.css";
-import MemoCounter from "./component/useMemo/MemoCounter";
+import CustomHookExp from "./component/coustomHooks/CustomHookExp";
+import FocusInput from "./component/useRef/FocusInput";
+// import MemoCounter from "./component/useMemo/MemoCounter";
+import RefExample from "./component/useRef/RefExample";
 // import ParentComp from "./component/useCallback/ParentComp";
 // import FetchWithReducer from "./component/useReducer/FetchWithReducer";
 // import { UserProvider } from "./component/context/UserContext";
@@ -155,7 +158,10 @@ function App() {
       </Provider> */}
       {/* <FetchWithReducer></FetchWithReducer> */}
       {/* <ParentComp></ParentComp> */}
-      <MemoCounter></MemoCounter>
+      {/* <MemoCounter></MemoCounter> */}
+      {/* <RefExample></RefExample> */}
+      {/* <FocusInput></FocusInput> */}
+      <CustomHookExp></CustomHookExp>
     </div>
   );
 }
